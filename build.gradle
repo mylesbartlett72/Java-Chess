@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+mainClassName = 'bangsparks.com.jarchess.Main'
+applicationDefaultJvmArgs = ["-Dgreeting.language=en"]
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/images"
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'bangsparks.com.jarchess.Main'
+        )
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+}
